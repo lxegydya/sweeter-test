@@ -99,7 +99,7 @@ def sign_in():
             "id": username_receive,
             "exp": datetime.utcnow() + timedelta(seconds=60 * 60 * 24)
         }
-        token = jwt.encode(payload, SECRET_KEY, algorithm="HS256").decode('UTF-8')
+        token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
 
         return jsonify(
             {
